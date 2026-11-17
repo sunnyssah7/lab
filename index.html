@@ -169,6 +169,15 @@ section{padding:clamp(80px,12vw,150px) clamp(20px,4vw,48px)}
 .panel li::before{content:"→";color:var(--acc);font-family:var(--mono)}
 .panel li b{color:var(--fg);font-weight:500}
 
+.kv{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:start}
+.kv:last-child{border:0}
+.kv span{font-family:var(--mono);font-size:11px;color:var(--dim);padding-top:5px;text-transform:uppercase;letter-spacing:.06em}
+.kv p{display:flex;flex-wrap:wrap;gap:6px}
+.kv i{font-style:normal;font-family:var(--mono);font-size:12px;padding:4px 10px;border-radius:99px;border:1px solid var(--line2);color:var(--fg);transition:all .2s}
+.kv i:hover{border-color:var(--acc);color:var(--acc)}
+.kv i.nx{color:var(--can);border-color:rgba(var(--canrgb),.35)}
+@media (max-width:560px){.kv{grid-template-columns:1fr;gap:8px}}
+
 /* contact */
 .contact{text-align:left;position:relative;overflow:hidden}
 .big{font-size:clamp(54px,12vw,190px);letter-spacing:-.055em;line-height:.85;font-weight:600}
@@ -210,7 +219,7 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
   <div class="status"><span class="pulse"></span><span id="statusText">currently: autonomous vehicle work @ ucr ce-cert</span></div>
   <h1><span class="scr" data-text="building">building</span> <span class="scr" data-text="hardware">hardware</span> <span class="scr" data-text="that">that</span> <em class="acc scr" data-text="thinks.">thinks.</em></h1>
   <div class="hero-sub">
-    <p><strong>18. EE @ UC Riverside. Five ventures in.</strong> I'm building toward a company that puts intelligence into physical machines: edge AI, robotics, autonomy. Robots, research, companies. Everything ships, and it all gets logged here.</p>
+    <p><strong>18. EE @ UC Riverside. Founder.</strong> I'm building toward a company that puts intelligence into physical machines: edge AI, robotics, autonomy. Robots, research, companies. Everything ships, and it all gets logged here.</p>
     <div class="btns">
       <a href="#work" class="btn pri mag" data-hov>see the work ↓</a>
       <a href="#contact" class="btn mag" data-hov>get in touch</a>
@@ -247,7 +256,7 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
       </div>
     </a>
 
-    <a class="card rv" data-hov href="#">
+    <a class="card w4 rv" data-hov href="#">
       <div class="vis" data-vis="network"></div>
       <span class="arrow">↗</span>
       <div class="meta">
@@ -258,18 +267,7 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
       </div>
     </a>
 
-    <a class="card rv" data-hov href="#">
-      <div class="vis" data-vis="growth"></div>
-      <span class="arrow">↗</span>
-      <div class="meta">
-        <div class="meta-top"><span>client work</span><span class="tag t-ok">shipped</span></div>
-        <h3>+$13k/mo for a client</h3>
-        <p>Closed my first paying client through DMs, then rebuilt their distribution and positioning, adding $13k a month to their business. Sales, psychology and the numbers behind them.</p>
-        <div class="stack"><span>growth</span><span>sales</span><span>positioning</span></div>
-      </div>
-    </a>
-
-    <a class="card w12 rv queued" data-hov href="#">
+        <a class="card w8 rv queued" data-hov href="#">
       <div class="vis" data-vis="chip"></div>
       <span class="arrow">↗</span>
       <div class="meta">
@@ -284,21 +282,22 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
 
   <div class="stats rv">
     <div class="stat"><b data-count="18">0</b><span>years old</span></div>
-    <div class="stat"><b data-count="5">0</b><span>ventures started</span></div>
-    <div class="stat"><b data-count="13" data-pre="$" data-suf="k">0</b><span>monthly lift for a client</span></div>
     <div class="stat"><b data-count="2">0</b><span>research labs</span></div>
+    <div class="stat"><b data-count="120">0</b><span>lidar beams in my robot</span></div>
+    <div class="stat"><b data-count="1">0</b><span>company being built</span></div>
+  </div>
   </div>
 </section>
 
 <section id="founder">
-  <div class="sec-head rv"><div><div class="idx">02 /</div><h2>the founder part</h2></div><div class="note">4 killed · 1 live<br>every one compounded</div></div>
-  <div class="manifesto rv">I started selling at 16. By 18 I'd launched five ventures and <span class="hl">killed four of them</span>. Not because I got bored, but because each one showed me something the last couldn't: <span class="hl">time-for-money has a ceiling</span>, education communities churn, and distribution beats product until it doesn't. The goal hasn't moved: <span class="hl">a hardware company that puts intelligence into physical machines.</span> Engineering is how I get the depth. Business is how I get the reps.</div>
+  <div class="sec-head rv"><div><div class="idx">02 /</div><h2>the founder part</h2></div><div class="note">engineer by training<br>founder by default</div></div>
+  <div class="manifesto rv">Most people wait until they're qualified. I started selling at 16 and <span class="hl">I've been building ever since</span>. At 18 I'm in two research labs, shipping robotics code and running a company, all <span class="hl">in my first year of engineering school</span>. The goal is fixed: <span class="hl">a hardware company that puts intelligence into physical machines.</span> Engineering gives me the depth. Building companies gives me the reps.</div>
   <div class="ventures">
-    <div class="vent rv"><span class="vs live">live</span><h4>Operator</h4><p>A network for young operators. Platform, sessions, apparel.</p></div>
-    <div class="vent rv"><span class="vs">killed</span><h4>Edgehouse Media</h4><p>AI distribution, then performance creative. First paying client, +$13k/mo for them.</p></div>
-    <div class="vent rv"><span class="vs">killed</span><h4>Metal Tiger</h4><p>Premium gear for people who work at computers. Sourced suppliers and built a waitlist.</p></div>
-    <div class="vent rv"><span class="vs">killed</span><h4>Builders Guild</h4><p>Helped hardware founders prototype faster with AI. Lesson: education models churn.</p></div>
-    <div class="vent rv"><span class="vs">killed</span><h4>Sovereign Consulting</h4><p>Lesson: never build something capped by your own hours.</p></div>
+    <div class="vent rv"><span class="vs live">01</span><h4>Ship, then polish</h4><p>A working robot beats a perfect plan. Every build goes public, finished or not.</p></div>
+    <div class="vent rv"><span class="vs live">02</span><h4>First principles</h4><p>Know why log-odds and not probabilities. Don't copy architectures you can't defend.</p></div>
+    <div class="vent rv"><span class="vs live">03</span><h4>Hardware is the moat</h4><p>Software gets copied in weeks. Atoms, sensors and silicon take years.</p></div>
+    <div class="vent rv"><span class="vs live">04</span><h4>Technical + commercial</h4><p>Learn to build it and to sell it. Founders need both.</p></div>
+    <div class="vent rv"><span class="vs live">05</span><h4>Compound daily</h4><p>Ten years of small reps beats one big leap. Show up, log it, repeat.</p></div>
   </div>
 </section>
 
@@ -306,12 +305,12 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
   <div class="sec-head rv"><div><div class="idx">03 /</div><h2>build log</h2></div><div class="note">newest first</div></div>
   <div class="log rv">
     <div class="log-bar"><i></i><i></i><i></i><span>~/log — tail -f</span></div>
-    <div class="row"><span class="d">2026.11</span><span class="k">[launch]</span><span class="v">Started Operator<small>Community brand for young operators. Free community first, apparel after traction.</small></span></div>
+    <div class="row"><span class="d">2026.11</span><span class="k">[launch]</span><span class="v">Started Operator<small>A network for young builders. Writing the platform myself.</small></span></div>
     <div class="row"><span class="d">2026.11</span><span class="k">[research]</span><span class="v">Joined UCR CE-CERT<small>Volunteer on an autonomous vehicle project.</small></span></div>
     <div class="row"><span class="d">2026.11</span><span class="k">[ship]</span><span class="v">autonomy-sim<small>LiDAR mapping + A* replanning + pure pursuit. Open source on GitHub.</small></span></div>
     <div class="row"><span class="d">2026</span><span class="k">[research]</span><span class="v">Air quality &amp; transportation lab<small>Data analysis for autonomous vehicles.</small></span></div>
     <div class="row"><span class="d">2026.09</span><span class="k">[start]</span><span class="v">B.S. Electrical Engineering, UC Riverside</span></div>
-    <div class="row"><span class="d">—</span><span class="k">[work]</span><span class="v">Engineering intern, Caltrans</span></div>
+    <div class="row"><span class="d">pre-ucr</span><span class="k">[work]</span><span class="v">Engineering intern, Caltrans<small>First taste of engineering on real infrastructure.</small></span></div>
     <div class="row"><span class="d">next</span><span class="k">[queued]</span><span class="v">Edge AI sensor node <span class="cursor-blink"></span></span></div>
   </div>
 </section>
@@ -320,13 +319,11 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
   <div class="sec-head rv"><div><div class="idx">04 /</div><h2>now</h2></div><div class="note">updated nov 2026</div></div>
   <div class="now">
     <div class="panel rv">
-      <h4>// SKILL TREE — HONEST LEVELS</h4>
-      <div class="skill"><span>sales &amp; persuasion</span><div class="bar"><i data-w="70"></i></div><em>lv 7</em></div>
-      <div class="skill"><span>python</span><div class="bar"><i data-w="30"></i></div><em>lv 3</em></div>
-      <div class="skill"><span>c / c++</span><div class="bar"><i data-w="15"></i></div><em>lv 1</em></div>
-      <div class="skill"><span>circuits</span><div class="bar"><i data-w="15"></i></div><em>lv 1</em></div>
-      <div class="skill"><span>embedded / firmware</span><div class="bar"><i data-w="5"></i></div><em>lv 0</em></div>
-      <div class="skill"><span>tinyml</span><div class="bar"><i data-w="5"></i></div><em>lv 0</em></div>
+      <h4>// TECHNICAL STACK</h4>
+      <div class="kv"><span>shipped with</span><p><i>python</i><i>numpy</i><i>scipy</i><i>matplotlib</i><i>pytest</i><i>git</i><i>linux</i></p></div>
+      <div class="kv"><span>robotics</span><p><i>occupancy mapping</i><i>a* planning</i><i>pure pursuit</i><i>lidar models</i><i>unicycle kinematics</i></p></div>
+      <div class="kv"><span>ee core</span><p><i>circuit analysis</i><i>electronics</i><i>calculus</i><i>physics</i></p></div>
+      <div class="kv"><span>going deep on</span><p><i class="nx">c / c++</i><i class="nx">embedded c</i><i class="nx">esp32</i><i class="nx">tinyml</i><i class="nx">ros 2</i><i class="nx">verilog</i></p></div>
     </div>
     <div class="panel rv">
       <h4>// THIS SEMESTER</h4>
