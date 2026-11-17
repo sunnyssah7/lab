@@ -139,6 +139,21 @@ section{padding:clamp(80px,12vw,150px) clamp(20px,4vw,48px)}
 .vs{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line2);border-radius:99px;padding:3px 8px}
 .vs.live{color:var(--ok);border-color:var(--ok)}
 
+
+/* ai */
+.ai-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
+@media (max-width:900px){.ai-grid{grid-template-columns:1fr}}
+.ai-vis{position:relative;min-height:300px;padding:0;overflow:hidden}
+.ai-vis canvas{position:absolute;inset:0;width:100%;height:100%}
+.ai-cap{position:absolute;left:20px;bottom:16px;font-family:var(--mono);font-size:11px;color:var(--dim)}
+.concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+@media (max-width:900px){.concepts{grid-template-columns:1fr}}
+.cc{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--bg2);transition:border-color .3s,transform .3s}
+.cc:hover{border-color:var(--acc);transform:translateY(-4px)}
+.cc h4{font-size:19px;font-weight:500;letter-spacing:-.02em;margin:14px 0 6px}
+.cc p{font-size:14px;color:var(--mut)}
+.vs.next{color:var(--can);border-color:rgba(var(--canrgb),.5)}
+
 /* log */
 .log{font-family:var(--mono);font-size:14px;border:1px solid var(--line);border-radius:14px;background:var(--bg2);overflow:hidden}
 .log-bar{display:flex;gap:7px;padding:14px 18px;border-bottom:1px solid var(--line);align-items:center}
@@ -207,6 +222,7 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
   <ul>
     <li><a href="#work" data-hov>work</a></li>
     <li><a href="#founder" data-hov>founder</a></li>
+    <li><a href="#ai" data-hov>ai &amp; data</a></li>
     <li><a href="#log" data-hov>build log</a></li>
     <li><a href="#now" data-hov>now</a></li>
     <li><a href="#contact" data-hov>contact</a></li>
@@ -301,8 +317,31 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
   </div>
 </section>
 
+<section id="ai">
+  <div class="sec-head rv"><div><div class="idx">03 /</div><h2>ai &amp; data</h2></div><div class="note">ai-native builder<br>learning the math underneath</div></div>
+  <div class="ai-grid">
+    <div class="panel ai-vis rv"><canvas id="nn"></canvas><div class="ai-cap">// forward pass: input → hidden → output</div></div>
+    <div class="panel rv">
+      <h4>// BUILDING WITH AI</h4>
+      <ul>
+        <li><span><b>AI-assisted engineering:</b> I ship real software with coding agents, and then I read and test every line myself.</span></li>
+        <li><span><b>LLM behavior research:</b> I ran structured query tests across AI assistants to measure which companies they recommend, and why.</span></li>
+        <li><span><b>Automation:</b> I build agent workflows for research, tracking and outreach instead of doing it by hand.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="concepts">
+    <div class="cc rv"><span class="vs live">applied</span><h4>Data structures</h4><p>Priority queues (binary heaps) drive A* search in autonomy-sim. Hash maps hold the cost table. Graph search runs on an 8-connected grid.</p></div>
+    <div class="cc rv"><span class="vs live">applied</span><h4>Probabilistic models</h4><p>A Bayesian occupancy grid in log-odds form: every LiDAR beam updates the robot's belief about the world.</p></div>
+    <div class="cc rv"><span class="vs live">applied</span><h4>Algorithms</h4><p>Admissible heuristics, optimal pathfinding, vectorized ray casting, and complexity tradeoffs on large grids.</p></div>
+    <div class="cc rv"><span class="vs">studying</span><h4>Machine learning</h4><p>Regression, gradient descent and neural networks, with a focus on what fits on a microcontroller: quantization and TinyML.</p></div>
+    <div class="cc rv"><span class="vs">studying</span><h4>SQL &amp; data modeling</h4><p>Relational schemas, joins and aggregations: the backbone of every dataset a robot or a company produces.</p></div>
+    <div class="cc rv"><span class="vs next">next</span><h4>Edge inference</h4><p>Training a model, compressing it to int8 and running it on-device. This is where AI meets the hardware.</p></div>
+  </div>
+</section>
+
 <section id="log">
-  <div class="sec-head rv"><div><div class="idx">03 /</div><h2>build log</h2></div><div class="note">newest first</div></div>
+  <div class="sec-head rv"><div><div class="idx">04 /</div><h2>build log</h2></div><div class="note">newest first</div></div>
   <div class="log rv">
     <div class="log-bar"><i></i><i></i><i></i><span>~/log — tail -f</span></div>
     <div class="row"><span class="d">2026.11</span><span class="k">[launch]</span><span class="v">Started Operator<small>A network for young builders. Writing the platform myself.</small></span></div>
@@ -316,7 +355,7 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
 </section>
 
 <section id="now">
-  <div class="sec-head rv"><div><div class="idx">04 /</div><h2>now</h2></div><div class="note">updated nov 2026</div></div>
+  <div class="sec-head rv"><div><div class="idx">05 /</div><h2>now</h2></div><div class="note">updated nov 2026</div></div>
   <div class="now">
     <div class="panel rv">
       <h4>// TECHNICAL STACK</h4>
@@ -338,7 +377,7 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,4vw,48
 </section>
 
 <section class="contact" id="contact">
-  <div class="sec-head rv"><div><div class="idx">05 /</div><h2>contact</h2></div><div class="note">labs, internships,<br>builders, founders</div></div>
+  <div class="sec-head rv"><div><div class="idx">06 /</div><h2>contact</h2></div><div class="note">labs, internships,<br>builders, founders</div></div>
   <div class="big rv">let's build<br><span class="o">something.</span></div>
   <div class="contact-row rv">
     <div class="mail"><span id="mailText">sunnyssah7@gmail.com</span><button class="copy" id="copyBtn" data-hov>copy</button></div>
@@ -558,5 +597,25 @@ const visFns={
   }
 };
 document.querySelectorAll('[data-vis]').forEach(h=>visFns[h.dataset.vis](h));
+/* ===== NEURAL NET ===== */
+(function(){
+  const host=document.querySelector('.ai-vis');if(!host)return;
+  const c=document.getElementById('nn'),x=c.getContext('2d'),d=Math.min(devicePixelRatio||1,2);
+  const layers=[4,7,7,3];let W,H,nodes=[],pulses=[];
+  function fit(){W=c.width=host.clientWidth*d;H=c.height=host.clientHeight*d;nodes=layers.map((n,i)=>[...Array(n)].map((_,j)=>({x:W*(.14+.72*i/(layers.length-1)),y:H*(.12+.7*(j+.5)/n),a:0})))}
+  fit();addEventListener('resize',fit);
+  function spawn(){const n=nodes[0][Math.floor(Math.random()*nodes[0].length)];n.a=1;pulses.push({l:0,from:n,to:nodes[1][Math.floor(Math.random()*nodes[1].length)],t:0})}
+  let f=0;
+  (function loop(){x.clearRect(0,0,W,H);
+    for(let i=0;i<nodes.length-1;i++)for(const a of nodes[i])for(const b of nodes[i+1]){x.strokeStyle='rgba(200,210,255,.06)';x.lineWidth=d;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+    pulses=pulses.filter(p=>{p.t+=reduce?1:.03;const X=p.from.x+(p.to.x-p.from.x)*p.t,Y=p.from.y+(p.to.y-p.from.y)*p.t;
+      x.strokeStyle=p.l==2?'rgba(255,168,96,.6)':'rgba(47,134,255,.6)';x.lineWidth=1.5*d;x.beginPath();x.moveTo(p.from.x,p.from.y);x.lineTo(X,Y);x.stroke();
+      if(p.t>=1){p.to.a=1;if(p.l<layers.length-2){for(let k=0;k<2;k++)pulses.push({l:p.l+1,from:p.to,to:nodes[p.l+2][Math.floor(Math.random()*nodes[p.l+2].length)],t:0})}return false}return true});
+    nodes.forEach((L,i)=>L.forEach(n=>{n.a*=.96;const last=i==nodes.length-1;x.fillStyle=last?`rgba(255,168,96,${.25+.75*n.a})`:`rgba(${47+180*(1-n.a)},${134+90*(1-n.a)},255,${.3+.7*n.a})`;
+      x.beginPath();x.arc(n.x,n.y,(5+4*n.a)*d,0,7);x.fill()}));
+    if(f++%28==0&&pulses.length<40)spawn();
+    requestAnimationFrame(loop)})();
+})();
+
 </script>
 </body>
